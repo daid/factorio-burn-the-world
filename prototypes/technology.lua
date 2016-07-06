@@ -3,6 +3,7 @@ table.insert(data.raw["technology"]["automation"].effects, {type = "unlock-recip
 table.insert(data.raw["technology"]["automation"].effects, {type = "unlock-recipe", recipe = "burner-long-handed-inserter"})
 
 table.insert(data.raw["technology"]["logistics"].effects, {type = "unlock-recipe", recipe = "burner-fast-inserter"})
+table.insert(data.raw["technology"]["logistics"].effects, {type = "unlock-recipe", recipe = "burner-splitter"})
 
 table.insert(data.raw["technology"]["logistics-2"].effects, {type = "unlock-recipe", recipe = "burner-stack-inserter"})
 table.insert(data.raw["technology"]["logistics-2"].effects, {type = "unlock-recipe", recipe = "burner-stack-filter-inserter"})
@@ -19,10 +20,8 @@ data:extend(
     icon = "__burn-the-world__/graphics/icons/clockwork-parts.png",
     effects =
     {
-      {
-        type = "unlock-recipe",
-        recipe = "burner-filter-inserter"
-      }
+      { type = "unlock-recipe", recipe = "burner-filter-inserter" },
+      { type = "unlock-recipe", recipe = "burner-science-pack-2" },
     },
     prerequisites = {"automation"},
     unit =
@@ -39,18 +38,9 @@ data:extend(
     icon = "__base__/graphics/technology/automation.png",
     effects =
     {
-      {
-        type = "unlock-recipe",
-        recipe = "burner-assembling-machine-2"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "burner-mining-drill-2"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "miniature-steam-engine"
-      },
+      { type = "unlock-recipe", recipe = "burner-assembling-machine-2" },
+      { type = "unlock-recipe", recipe = "burner-mining-drill-2" },
+      { type = "unlock-recipe", recipe = "miniature-steam-engine" },
     },
     prerequisites = {"clockworking"},
     unit =

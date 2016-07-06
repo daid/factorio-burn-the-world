@@ -2,52 +2,77 @@ data:extend(
 {
   {
     type = "item",
-    name = "burner-long-handed-inserter",
-    icon = "__burn-the-world__/graphics/icons/burner-long-handed-inserter.png",
+    name = "burner-filter-inserter",
+    icon = "__burn-the-world__/graphics/icons/burner-filter-inserter.png",
     flags = {"goes-to-quickbar"},
     subgroup = "burner-inserter",
-    order = "c[long-handed-inserter]",
-    place_result = "burner-long-handed-inserter",
+    order = "e[filter-inserter]",
+    place_result = "burner-filter-inserter",
     stack_size = 50
   },
 
   {
     type = "recipe",
-    name = "burner-long-handed-inserter",
+    name = "burner-filter-inserter",
     enabled = false,
     ingredients =
     {
-      {"iron-gear-wheel", 1},
-      {"iron-plate", 1},
-      {"burner-inserter", 1}
+      {"burner-fast-inserter", 1},
+      {"clockwork-parts", 4}
     },
-    result = "burner-long-handed-inserter"
+    result = "burner-filter-inserter",
+    requester_paste_multiplier = 4
   },
 
   {
     type = "inserter",
-    name = "burner-long-handed-inserter",
-    icon = "__burn-the-world__/graphics/icons/burner-long-handed-inserter.png",
+    name = "burner-filter-inserter",
+    icon = "__burn-the-world__/graphics/icons/burner-filter-inserter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "burner-long-handed-inserter"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "burner-filter-inserter"},
     max_health = 40,
     corpse = "small-remnants",
-    resistances = 
+    resistances =
     {
       {
         type = "fire",
         percent = 90
       }
     },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-fast-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
-    pickup_position = {0, -2},
-    insert_position = {0, 2.2},
-    energy_per_movement = 5000,
-    energy_per_rotation = 5000,
-    rotation_speed = 0.02,
-    extension_speed = 0.0457,
-    hand_size = 1.5,
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = 80000,
+    energy_per_rotation = 80000,
     energy_source =
     {
       type = "burner",
@@ -62,52 +87,27 @@ data:extend(
         }
       }
     },
-    fast_replaceable_group = "long-handed-inserter",
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-      match_progress_to_activity = true,
-      sound =
-      {
-        {
-          filename = "__base__/sound/inserter-long-handed-1.ogg",
-          volume = 0.75
-        },
-        {
-          filename = "__base__/sound/inserter-long-handed-2.ogg",
-          volume = 0.75
-        },
-        {
-          filename = "__base__/sound/inserter-long-handed-3.ogg",
-          volume = 0.75
-        },
-        {
-          filename = "__base__/sound/inserter-long-handed-4.ogg",
-          volume = 0.75
-        },
-        {
-          filename = "__base__/sound/inserter-long-handed-5.ogg",
-          volume = 0.75
-        }
-      }
-    },
+    extension_speed = 0.07,
+    rotation_speed = 0.04,
+    fast_replaceable_group = "inserter",
+    filter_count = 5,
     hand_base_picture =
     {
-      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-base.png",
+      filename = "__base__/graphics/entity/filter-inserter/filter-inserter-hand-base.png",
       priority = "extra-high",
       width = 8,
       height = 34
     },
     hand_closed_picture =
     {
-      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-closed.png",
+      filename = "__base__/graphics/entity/filter-inserter/filter-inserter-hand-closed.png",
       priority = "extra-high",
       width = 18,
       height = 41
     },
     hand_open_picture =
     {
-      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-open.png",
+      filename = "__base__/graphics/entity/filter-inserter/filter-inserter-hand-open.png",
       priority = "extra-high",
       width = 18,
       height = 41
@@ -135,7 +135,7 @@ data:extend(
     },
     platform_picture =
     {
-      sheet =
+      sheet=
       {
         filename = "__base__/graphics/entity/burner-inserter/burner-inserter-platform.png",
         priority = "extra-high",
@@ -144,6 +144,10 @@ data:extend(
         shift = {0.09375, 0}
       }
     },
+
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance
   },
 }
 )

@@ -2,44 +2,37 @@ data:extend(
 {
   {
     type = "item",
-    name = "burner-stack-filter-inserter",
-    icon = "__burn-the-world__/graphics/icons/burner-stack-filter-inserter.png",
+    name = "burner-long-handed-inserter",
+    icon = "__burn-the-world__/graphics/icons/burner-long-handed-inserter.png",
     flags = {"goes-to-quickbar"},
     subgroup = "burner-inserter",
-    order = "g[stack-filter-inserter]",
-    place_result = "burner-stack-filter-inserter",
+    order = "c[long-handed-inserter]",
+    place_result = "burner-long-handed-inserter",
     stack_size = 50
   },
 
   {
     type = "recipe",
-    name = "burner-stack-filter-inserter",
+    name = "burner-long-handed-inserter",
     enabled = false,
     ingredients =
     {
-      {"stack-inserter", 1},
-      {"clockwork-parts", 4}
+      {"iron-gear-wheel", 1},
+      {"iron-plate", 1},
+      {"burner-inserter", 1}
     },
-    result = "burner-stack-filter-inserter",
-    requester_paste_multiplier = 4
+    result = "burner-long-handed-inserter"
   },
 
   {
     type = "inserter",
-    name = "burner-stack-filter-inserter",
-    icon = "__burn-the-world__/graphics/icons/burner-stack-filter-inserter.png",
+    name = "burner-long-handed-inserter",
+    icon = "__burn-the-world__/graphics/icons/burner-long-handed-inserter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    stack = true,
-    filter_count = 1,
-    minable =
-    {
-      hardness = 0.2,
-      mining_time = 0.5,
-      result = "burner-stack-filter-inserter"
-    },
+    minable = {hardness = 0.2, mining_time = 0.5, result = "burner-long-handed-inserter"},
     max_health = 40,
     corpse = "small-remnants",
-    resistances =
+    resistances = 
     {
       {
         type = "fire",
@@ -48,10 +41,13 @@ data:extend(
     },
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
-    pickup_position = {0, -1},
-    insert_position = {0, 1.2},
-    energy_per_movement = 20000,
-    energy_per_rotation = 20000,
+    pickup_position = {0, -2},
+    insert_position = {0, 2.2},
+    energy_per_movement = 50000,
+    energy_per_rotation = 50000,
+    rotation_speed = 0.02,
+    extension_speed = 0.0457,
+    hand_size = 1.5,
     energy_source =
     {
       type = "burner",
@@ -66,9 +62,7 @@ data:extend(
         }
       }
     },
-    extension_speed = 0.07,
-    rotation_speed = 0.04,
-    fast_replaceable_group = "inserter",
+    fast_replaceable_group = "long-handed-inserter",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
@@ -76,46 +70,46 @@ data:extend(
       sound =
       {
         {
-          filename = "__base__/sound/inserter-fast-1.ogg",
+          filename = "__base__/sound/inserter-long-handed-1.ogg",
           volume = 0.75
         },
         {
-          filename = "__base__/sound/inserter-fast-2.ogg",
+          filename = "__base__/sound/inserter-long-handed-2.ogg",
           volume = 0.75
         },
         {
-          filename = "__base__/sound/inserter-fast-3.ogg",
+          filename = "__base__/sound/inserter-long-handed-3.ogg",
           volume = 0.75
         },
         {
-          filename = "__base__/sound/inserter-fast-4.ogg",
+          filename = "__base__/sound/inserter-long-handed-4.ogg",
           volume = 0.75
         },
         {
-          filename = "__base__/sound/inserter-fast-5.ogg",
+          filename = "__base__/sound/inserter-long-handed-5.ogg",
           volume = 0.75
         }
       }
     },
     hand_base_picture =
     {
-      filename = "__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-base.png",
+      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-base.png",
       priority = "extra-high",
       width = 8,
       height = 34
     },
     hand_closed_picture =
     {
-      filename = "__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-closed.png",
+      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-closed.png",
       priority = "extra-high",
-      width = 24,
+      width = 18,
       height = 41
     },
     hand_open_picture =
     {
-      filename = "__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-open.png",
+      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-open.png",
       priority = "extra-high",
-      width = 32,
+      width = 18,
       height = 41
     },
     hand_base_shadow =
@@ -150,9 +144,6 @@ data:extend(
         shift = {0.09375, 0}
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
-    circuit_wire_max_distance = inserter_circuit_wire_max_distance
   },
 }
 )

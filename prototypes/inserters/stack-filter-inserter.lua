@@ -2,39 +2,40 @@ data:extend(
 {
   {
     type = "item",
-    name = "burner-fast-inserter",
-    icon = "__burn-the-world__/graphics/icons/burner-fast-inserter.png",
+    name = "burner-stack-filter-inserter",
+    icon = "__burn-the-world__/graphics/icons/burner-stack-filter-inserter.png",
     flags = {"goes-to-quickbar"},
     subgroup = "burner-inserter",
-    order = "d[fast-inserter]",
-    place_result = "burner-fast-inserter",
+    order = "g[stack-filter-inserter]",
+    place_result = "burner-stack-filter-inserter",
     stack_size = 50
   },
 
   {
     type = "recipe",
-    name = "burner-fast-inserter",
+    name = "burner-stack-filter-inserter",
     enabled = false,
     ingredients =
     {
-      {"clockwork-parts", 2},
-      {"iron-plate", 1},
-      {"burner-inserter", 1}
+      {"stack-inserter", 1},
+      {"clockwork-parts", 4}
     },
-    result = "burner-fast-inserter",
+    result = "burner-stack-filter-inserter",
     requester_paste_multiplier = 4
   },
 
   {
     type = "inserter",
-    name = "burner-fast-inserter",
-    icon = "__burn-the-world__/graphics/icons/burner-fast-inserter.png",
+    name = "burner-stack-filter-inserter",
+    icon = "__burn-the-world__/graphics/icons/burner-stack-filter-inserter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    stack = true,
+    filter_count = 1,
     minable =
     {
       hardness = 0.2,
       mining_time = 0.5,
-      result = "burner-fast-inserter"
+      result = "burner-stack-filter-inserter"
     },
     max_health = 40,
     corpse = "small-remnants",
@@ -49,8 +50,8 @@ data:extend(
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
     insert_position = {0, 1.2},
-    energy_per_movement = 7000,
-    energy_per_rotation = 7000,
+    energy_per_movement = 200000,
+    energy_per_rotation = 200000,
     energy_source =
     {
       type = "burner",
@@ -98,23 +99,23 @@ data:extend(
     },
     hand_base_picture =
     {
-      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-base.png",
+      filename = "__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-base.png",
       priority = "extra-high",
       width = 8,
       height = 34
     },
     hand_closed_picture =
     {
-      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-closed.png",
+      filename = "__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-closed.png",
       priority = "extra-high",
-      width = 18,
+      width = 24,
       height = 41
     },
     hand_open_picture =
     {
-      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-open.png",
+      filename = "__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-open.png",
       priority = "extra-high",
-      width = 18,
+      width = 32,
       height = 41
     },
     hand_base_shadow =

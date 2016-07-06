@@ -20,6 +20,7 @@ data:extend(
       {"steel-plate", 15},
       {"iron-gear-wheel", 10},
       {"clockwork-parts", 10},
+      {"miniature-steam-engine", 2},
       {"pipe", 10},
     },
     result = "burner-pumpjack",

@@ -20,6 +20,7 @@ data:extend(
     {
       {"steel-plate", 5},
       {"iron-gear-wheel", 5},
+      {"miniature-steam-engine", 2},
       {"clockwork-parts", 5},
       {"pipe", 5}
     },

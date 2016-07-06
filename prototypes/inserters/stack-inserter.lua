@@ -52,8 +52,8 @@ data:extend(
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
     insert_position = {0, 1.2},
-    energy_per_movement = 20000,
-    energy_per_rotation = 20000,
+    energy_per_movement = 200000,
+    energy_per_rotation = 200000,
     energy_source =
     {
       type = "burner",
