@@ -12,6 +12,20 @@ data:extend(
     result = "science-pack-2",
     enabled = false
   },
+  {
+    type = "recipe",
+    name = "burner-science-pack-3",
+    enabled = false,
+    energy_required = 12,
+    ingredients =
+    {
+      {"spring-loaded-accumulator", 1},
+      {"light-machinery", 1},
+      {"burner-filter-inserter", 1},
+      {"steel-plate", 1},
+    },
+    result = "science-pack-3"
+  },
 
   {
     type = "recipe",

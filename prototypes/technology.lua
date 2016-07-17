@@ -12,6 +12,11 @@ table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-r
 table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-recipe", recipe = "burner-oil-refinery"})
 table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-recipe", recipe = "burner-chemical-plant"})
 
+table.insert(data.raw["technology"]["plastics"].effects, {type = "unlock-recipe", recipe = "high-quality-lubericant"})
+
+table.insert(data.raw["technology"]["battery"].effects, {type = "unlock-recipe", recipe = "spring-loaded-accumulator"})
+table.insert(data.raw["technology"]["battery"].effects, {type = "unlock-recipe", recipe = "burner-science-pack-3"})
+
 data:extend(
 {
   {
@@ -50,6 +55,23 @@ data:extend(
       time = 15
     },
     order = "a-b-b-a",
+  },
+  {
+    type = "technology",
+    name = "advanced-clockworking",
+    icon = "__burn-the-world__/graphics/icons/clockwork-parts.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "light-machinery" },
+    },
+    prerequisites = {"clockworking", "plastics"},
+    unit =
+    {
+      count = 100,
+      ingredients = {{"science-pack-1", 1}, {"science-pack-2", 1}},
+      time = 15
+    },
+    order = "a-d-a-a",
   },
 }
 )
