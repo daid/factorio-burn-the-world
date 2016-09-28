@@ -91,7 +91,7 @@ data:extend(
     },
     results=
     {
-      {type="fluid", name="high-quality-lubericant", amount=5}
+      {type="fluid", name="high-quality-lubericant", amount=10}
     },
     subgroup = "fluid-recipes"
   },
@@ -111,7 +111,7 @@ data:extend(
     category = "chemistry",
     energy_required = 5,
     ingredients = {
-      {type="fluid", name="high-quality-lubericant", amount=2},
+      {type="fluid", name="high-quality-lubericant", amount=0.5},
       {type="item", name="iron-plate", amount=1},
       {type="item", name="copper-plate", amount=1}
     },
@@ -134,12 +134,37 @@ data:extend(
     category = "crafting-with-fluid",
     energy_required = 5,
     ingredients = {
-      {type="fluid", name="high-quality-lubericant", amount=1},
+      {type="fluid", name="high-quality-lubericant", amount=0.5},
       {type="item", name="clockwork-parts", amount=1},
       {type="item", name="miniature-steam-engine", amount=1},
       {type="item", name="spring-loaded-accumulator", amount=1}
     },
     result = "light-machinery",
+    enabled = false
+  },
+
+  {
+    type = "item",
+    name = "stirling-engine-unit",
+    icon = "__base__/graphics/icons/engine-unit.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "intermediate-product",
+    order = "g[engine-unit]",
+    stack_size = 50
+  },
+  {
+    type = "recipe",
+    name = "stirling-engine-unit",
+    energy_required = 20,
+    category = "advanced-crafting",
+    ingredients =
+    {
+      {"steel-plate", 1},
+      {"iron-gear-wheel", 2},
+      {"miniature-steam-engine", 1},
+      {"copper-gear-wheel", 2},
+    },
+    result = "stirling-engine-unit",
     enabled = false
   },
 }

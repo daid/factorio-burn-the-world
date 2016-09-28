@@ -73,5 +73,95 @@ data:extend(
     },
     order = "a-d-a-a",
   },
+  {
+    type = "technology",
+    name = "advanced-clockworking",
+    icon = "__burn-the-world__/graphics/icons/clockwork-parts.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "light-machinery" },
+    },
+    prerequisites = {"clockworking", "plastics"},
+    unit =
+    {
+      count = 100,
+      ingredients = {{"science-pack-1", 1}, {"science-pack-2", 1}},
+      time = 15
+    },
+    order = "a-d-a-a",
+  },
+  {
+    type = "technology",
+    name = "clean-coal",
+    icon = "__base__/graphics/icons/coal.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "clean-coal" },
+    },
+    prerequisites = {"burner-automation-2"},
+    unit =
+    {
+      count = 40,
+      ingredients = {{"science-pack-1", 1}, {"science-pack-2", 1}},
+      time = 15
+    },
+    order = "a-b-b-a",
+  },
+  {
+    type = "technology",
+    name = "stirling-engine",
+    icon = "__base__/graphics/technology/engine.png",
+    prerequisites = {"steel-processing", "burner-automation-2"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+      },
+      time = 15
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "stirling-engine-unit"
+      }
+    },
+    order = "b-a"
+  },
+  {
+    type = "technology",
+    name = "steam-railway",
+    icon = "__base__/graphics/technology/railway.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "rail"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steam-locomotive"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cargo-wagon"
+      }
+    },
+    prerequisites = {"logistics-2", "steel-processing", "stirling-engine"},
+    unit =
+    {
+      count = 70,
+      ingredients =
+      {
+        {"science-pack-1", 2},
+        {"science-pack-2", 1},
+      },
+      time = 20
+    },
+    order = "c-g-a",
+  },
 }
 )

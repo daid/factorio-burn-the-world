@@ -1,5 +1,6 @@
 require("prototypes.item-groups")
 require("prototypes.parts")
+require("prototypes.fuel")
 
 require("prototypes.inserters.burner-inserter")
 require("prototypes.inserters.long-inserter")
@@ -16,6 +17,7 @@ require("prototypes.assembling-machines.chemical-plant")
 require("prototypes.pumpjack")
 require("prototypes.lab")
 require("prototypes.rocket-silo")
+require("prototypes.locomotive")
 
 require("prototypes.alternative-recipe")
 
