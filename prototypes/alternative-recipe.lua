@@ -57,7 +57,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "express-splitter",
+    name = "burner-express-splitter",
     category = "crafting-with-fluid",
     enabled = false,
     energy_required = 2,

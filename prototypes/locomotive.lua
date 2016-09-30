@@ -2,20 +2,20 @@ data:extend(
 {
   {
     type = "item-with-entity-data",
-    name = "steam-locomotive",
+    name = "stirling-locomotive",
     icon = "__base__/graphics/icons/diesel-locomotive.png",
     flags = {"goes-to-quickbar"},
     subgroup = "transport",
-    order = "a[train-system]-f[steam-locomotive]-a",
-    place_result = "steam-locomotive",
+    order = "a[train-system]-f[stirling-locomotive]-a",
+    place_result = "stirling-locomotive",
     stack_size = 5
   },
   {
     type = "locomotive",
-    name = "steam-locomotive",
+    name = "stirling-locomotive",
     icon = "__base__/graphics/icons/diesel-locomotive.png",
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {mining_time = 1, result = "steam-locomotive"},
+    minable = {mining_time = 1, result = "stirling-locomotive"},
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
     max_health = 1000,
     corpse = "medium-remnants",
@@ -24,8 +24,8 @@ data:extend(
     selection_box = {{-1, -3}, {1, 3}},
     drawing_box = {{-1, -4}, {1, 3}},
     weight = 2000,
-    max_speed = 1.2,
-    max_power = "600kW",
+    max_speed = 1.4,
+    max_power = "800kW",
     reversing_power_modifier = 0.6,
     braking_force = 10,
     friction_force = 0.50,
@@ -246,14 +246,14 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "steam-locomotive",
+    name = "stirling-locomotive",
     enabled = false,
     ingredients =
     {
-      {"stirling-engine-unit", 20},
+      {"stirling-engine-unit", 15},
       {"clockwork-parts", 10},
       {"steel-plate", 30}
     },
-    result = "steam-locomotive"
+    result = "stirling-locomotive"
   },
 })

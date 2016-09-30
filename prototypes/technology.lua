@@ -5,8 +5,7 @@ table.insert(data.raw["technology"]["automation"].effects, {type = "unlock-recip
 table.insert(data.raw["technology"]["logistics"].effects, {type = "unlock-recipe", recipe = "burner-fast-inserter"})
 table.insert(data.raw["technology"]["logistics"].effects, {type = "unlock-recipe", recipe = "burner-splitter"})
 
-table.insert(data.raw["technology"]["logistics-2"].effects, {type = "unlock-recipe", recipe = "burner-stack-inserter"})
-table.insert(data.raw["technology"]["logistics-2"].effects, {type = "unlock-recipe", recipe = "burner-stack-filter-inserter"})
+table.insert(data.raw["technology"]["logistics-2"].effects, {type = "unlock-recipe", recipe = "burner-fast-splitter"})
 
 table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-recipe", recipe = "burner-pumpjack"})
 table.insert(data.raw["technology"]["oil-processing"].effects, {type = "unlock-recipe", recipe = "burner-oil-refinery"})
@@ -92,6 +91,62 @@ data:extend(
   },
   {
     type = "technology",
+    name = "burner-stack-inserter",
+    icon = "__base__/graphics/technology/stack-inserter.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "burner-stack-inserter" },
+      { type = "unlock-recipe", recipe = "burner-stack-filter-inserter" },
+      { type = "stack-inserter-capacity-bonus", modifier = 1 }
+    },
+    prerequisites = {"logistics-2", "advanced-clockworking"},
+    unit =
+    {
+      count = 150,
+      ingredients = { {"science-pack-1", 1}, {"science-pack-2", 1} },
+      time = 30
+    },
+    upgrade = true,
+    order = "c-o-a",
+  },
+  {
+    type = "technology",
+    name = "more-burner-inserter",
+    icon = "__base__/graphics/icons/burner-inserter.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "burner-short-long-inserter" },
+      { type = "unlock-recipe", recipe = "burner-long-short-inserter" },
+    },
+    prerequisites = {"logistics-2", "advanced-clockworking"},
+    unit =
+    {
+      count = 50,
+      ingredients = { {"science-pack-1", 2}, {"science-pack-2", 1} },
+      time = 15
+    },
+    order = "c-o-a",
+  },
+  {
+    type = "technology",
+    name = "more-burner-inserter2",
+    icon = "__base__/graphics/icons/burner-inserter.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "burner-short-long2-inserter" },
+      { type = "unlock-recipe", recipe = "burner-long2-short-inserter" },
+    },
+    prerequisites = {"more-burner-inserter", "battery"},
+    unit =
+    {
+      count = 50,
+      ingredients = { {"science-pack-1", 1}, {"science-pack-2", 1}, {"science-pack-3", 1} },
+      time = 15
+    },
+    order = "c-o-a",
+  },
+  {
+    type = "technology",
     name = "clean-coal",
     icon = "__base__/graphics/icons/coal.png",
     effects =
@@ -109,56 +164,53 @@ data:extend(
   },
   {
     type = "technology",
+    name = "powdered-coal",
+    icon = "__base__/graphics/icons/coal.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "powdered-coal" },
+    },
+    prerequisites = {"clean-coal"},
+    unit =
+    {
+      count = 40,
+      ingredients = {{"science-pack-1", 1}, {"science-pack-2", 1}, {"science-pack-3", 1}},
+      time = 15
+    },
+    order = "a-b-b-a",
+  },
+  {
+    type = "technology",
     name = "stirling-engine",
     icon = "__base__/graphics/technology/engine.png",
     prerequisites = {"steel-processing", "burner-automation-2"},
     unit =
     {
       count = 100,
-      ingredients =
-      {
-        {"science-pack-1", 1},
-        {"science-pack-2", 1},
-      },
+      ingredients = { {"science-pack-1", 1}, {"science-pack-2", 1}, },
       time = 15
     },
     effects =
     {
-      {
-        type = "unlock-recipe",
-        recipe = "stirling-engine-unit"
-      }
+      { type = "unlock-recipe", recipe = "stirling-engine-unit" }
     },
     order = "b-a"
   },
   {
     type = "technology",
-    name = "steam-railway",
+    name = "stirling-railway",
     icon = "__base__/graphics/technology/railway.png",
     effects =
     {
-      {
-        type = "unlock-recipe",
-        recipe = "rail"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "steam-locomotive"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "cargo-wagon"
-      }
+      { type = "unlock-recipe", recipe = "rail" },
+      { type = "unlock-recipe", recipe = "stirling-locomotive" },
+      { type = "unlock-recipe", recipe = "cargo-wagon" }
     },
     prerequisites = {"logistics-2", "steel-processing", "stirling-engine"},
     unit =
     {
       count = 70,
-      ingredients =
-      {
-        {"science-pack-1", 2},
-        {"science-pack-2", 1},
-      },
+      ingredients = { {"science-pack-1", 2}, {"science-pack-2", 1}, },
       time = 20
     },
     order = "c-g-a",
