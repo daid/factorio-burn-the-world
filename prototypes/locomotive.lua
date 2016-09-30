@@ -256,4 +256,38 @@ data:extend(
     },
     result = "stirling-locomotive"
   },
+
+  {
+    type = "recipe",
+    name = "burner-train-stop",
+    ingredients =
+    {
+      {"clockwork-parts", 5},
+      {"iron-plate", 10},
+      {"steel-plate", 3}
+    },
+    result = "train-stop"
+  },
+  {
+    type = "recipe",
+    name = "burner-rail-signal",
+    ingredients =
+    {
+      {"clockwork-parts", 1},
+      {"iron-plate", 5}
+    },
+    result = "rail-signal",
+    requester_paste_multiplier = 4
+  },
+  {
+    type = "recipe",
+    name = "burner-rail-chain-signal",
+    ingredients =
+    {
+      {"clockwork-parts", 1},
+      {"iron-plate", 5}
+    },
+    result = "rail-chain-signal",
+    requester_paste_multiplier = 4
+  },
 })

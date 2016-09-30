@@ -10,6 +10,8 @@ data.raw["recipe"]["small-electric-pole"].enabled = false
 data.raw["recipe"]["offshore-pump"].enabled = false
 
 table.insert(data.raw["technology"]["electronics"].prerequisites, "basic-electronics")
+if data.raw["technology"]["optics"].prerequisites == nil then data.raw["technology"]["optics"].prerequisites = {} end
+table.insert(data.raw["technology"]["optics"].prerequisites, "basic-electronics")
 
 data:extend(
 {

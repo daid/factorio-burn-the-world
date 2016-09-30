@@ -1,3 +1,5 @@
+require("utilfunctions")
+
 require("prototypes.item-groups")
 require("prototypes.parts")
 require("prototypes.fuel")
@@ -13,6 +15,7 @@ require("prototypes.inserters.long-short-inserter")
 require("prototypes.assembling-machines.assembling-machine-1")
 require("prototypes.assembling-machines.assembling-machine-2")
 require("prototypes.assembling-machines.assembling-machine-3")
+require("prototypes.assembling-machines.fuel-assembling-machine")
 require("prototypes.mining-drill-2")
 require("prototypes.assembling-machines.oil-refinery")
 require("prototypes.assembling-machines.chemical-plant")

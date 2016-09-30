@@ -16,6 +16,13 @@ table.insert(data.raw["technology"]["plastics"].effects, {type = "unlock-recipe"
 table.insert(data.raw["technology"]["battery"].effects, {type = "unlock-recipe", recipe = "spring-loaded-accumulator"})
 table.insert(data.raw["technology"]["battery"].effects, {type = "unlock-recipe", recipe = "burner-science-pack-3"})
 
+tableRemoveValue(data.raw["technology"]["rocketry"].prerequisites, "electronics")
+tableRemoveValue(data.raw["technology"]["concrete"].prerequisites, "advanced-material-processing-2")
+table.insert(data.raw["technology"]["concrete"].prerequisites, "advanced-material-processing")
+
+tableRemoveValue(data.raw["technology"]["research-speed-1"].prerequisites, "electronics")
+table.insert(data.raw["technology"]["research-speed-1"].prerequisites, "automation")
+
 data:extend(
 {
   {
@@ -164,13 +171,30 @@ data:extend(
   },
   {
     type = "technology",
+    name = "burner-fuel-assembling-machine",
+    icon = "__base__/graphics/technology/automation.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "burner-fuel-assembling-machine" },
+    },
+    prerequisites = {"clean-coal", "burner-automation-2"},
+    unit =
+    {
+      count = 75,
+      ingredients = {{"science-pack-1", 1}, {"science-pack-2", 1}},
+      time = 15
+    },
+    order = "a-b-b-a",
+  },
+  {
+    type = "technology",
     name = "powdered-coal",
     icon = "__base__/graphics/icons/coal.png",
     effects =
     {
       { type = "unlock-recipe", recipe = "powdered-coal" },
     },
-    prerequisites = {"clean-coal"},
+    prerequisites = {"clean-coal", "battery"},
     unit =
     {
       count = 40,
@@ -214,6 +238,29 @@ data:extend(
       time = 20
     },
     order = "c-g-a",
+  },
+  {
+    type = "technology",
+    name = "stirling-automated-rail-transportation",
+    icon = "__base__/graphics/technology/automated-rail-transportation.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "burner-train-stop" },
+      { type = "unlock-recipe", recipe = "burner-rail-signal" },
+      { type = "unlock-recipe", recipe = "burner-rail-chain-signal" },
+    },
+    prerequisites = {"stirling-railway"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"science-pack-1", 2},
+        {"science-pack-2", 1},
+      },
+      time = 20
+    },
+    order = "c-g-b",
   },
 }
 )

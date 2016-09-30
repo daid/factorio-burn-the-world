@@ -2,37 +2,36 @@ data:extend(
 {
   {
     type = "item",
-    name = "burner-assembling-machine-2",
-    icon = "__burn-the-world__/graphics/icons/assembling-machine-2.png",
+    name = "burner-fuel-assembling-machine",
+    icon = "__burn-the-world__/graphics/icons/fuel-assembling-machine.png",
     flags = {"goes-to-quickbar"},
     subgroup = "burner-production-machine",
-    order = "b[assembling-machine-2]-a",
-    place_result = "burner-assembling-machine-2",
+    order = "b[assembling-machine-2]-b",
+    place_result = "burner-fuel-assembling-machine",
     stack_size = 50
   },
 
   {
     type = "recipe",
-    name = "burner-assembling-machine-2",
+    name = "burner-fuel-assembling-machine",
     enabled = false,
     ingredients =
     {
       {"iron-plate", 9},
-      {"clockwork-parts", 3},
-      {"iron-gear-wheel", 2},
+      {"clockwork-parts", 5},
+      {"iron-gear-wheel", 5},
       {"copper-gear-wheel", 2},
-      {"burner-assembling-machine-1", 1}
     },
-    result = "burner-assembling-machine-2",
+    result = "burner-fuel-assembling-machine",
     requester_paste_multiplier = 4
   },
 
   {
     type = "assembling-machine",
-    name = "burner-assembling-machine-2",
-    icon = "__burn-the-world__/graphics/icons/assembling-machine-2.png",
+    name = "burner-fuel-assembling-machine",
+    icon = "__burn-the-world__/graphics/icons/fuel-assembling-machine.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "burner-assembling-machine-2"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "burner-fuel-assembling-machine"},
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -51,7 +50,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {0, -2} }}
+        pipe_connections = {{ type="input", position = {0.5, -1.5} }}
       },
       {
         production_type = "output",
@@ -59,13 +58,13 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {0, 2} }}
+        pipe_connections = {{ type="output", position = {-0.5, 1.5} }}
       },
       off_when_no_fluid_recipe = true
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    fast_replaceable_group = "assembling-machine",
+    collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
+    selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
+    fast_replaceable_group = "tiny-assembling-machine",
     animation =
     {
       filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
@@ -74,7 +73,8 @@ data:extend(
       height = 99,
       frame_count = 32,
       line_length = 8,
-      shift = {0.4, -0.06}
+      shift = {0.4, -0.06},
+      scale = 0.66,
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -94,8 +94,8 @@ data:extend(
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
-    crafting_categories = {"crafting", "advanced-crafting", "crafting-with-fluid"},
-    crafting_speed = 0.75,
+    crafting_categories = {"burner-fuel-processing"},
+    crafting_speed = 1.0,
     energy_source =
     {
       type = "burner",
@@ -110,13 +110,8 @@ data:extend(
         }
       }
     },
-    energy_usage = "150kW",
-    ingredient_count = 5,
-    module_specification =
-    {
-      module_slots = 2
-    },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"}
+    energy_usage = "50kW",
+    ingredient_count = 5
   },
 }
 )
