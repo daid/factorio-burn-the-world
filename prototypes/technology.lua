@@ -16,12 +16,19 @@ table.insert(data.raw["technology"]["plastics"].effects, {type = "unlock-recipe"
 table.insert(data.raw["technology"]["battery"].effects, {type = "unlock-recipe", recipe = "spring-loaded-accumulator"})
 table.insert(data.raw["technology"]["battery"].effects, {type = "unlock-recipe", recipe = "burner-science-pack-3"})
 
+--Rocketry is pretty much the main requirement for a large part of the rocket-silo requirement research.
 tableRemoveValue(data.raw["technology"]["rocketry"].prerequisites, "electronics")
+--Concrete requires electrical furnaces normally, we move it 1 up.
 tableRemoveValue(data.raw["technology"]["concrete"].prerequisites, "advanced-material-processing-2")
 table.insert(data.raw["technology"]["concrete"].prerequisites, "advanced-material-processing")
 
+--We move lab speed 1 level earlier in the tech tree, this allows you to research it without electrics.
 tableRemoveValue(data.raw["technology"]["research-speed-1"].prerequisites, "electronics")
 table.insert(data.raw["technology"]["research-speed-1"].prerequisites, "automation")
+
+--Military 3 oddly enough requires laser tech. Removing this makes it researchable without electrics.
+--Could be because there is still disabled railgun tech hidden in the code?
+tableRemoveValue(data.raw["technology"]["military-3"].prerequisites, "laser")
 
 data:extend(
 {
