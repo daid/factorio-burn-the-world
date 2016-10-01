@@ -111,7 +111,7 @@ data:extend(
     {
       { type = "unlock-recipe", recipe = "burner-assembling-machine-3" }
     },
-    prerequisites = {"advanced-clockworking", "automation-2"},
+    prerequisites = {"advanced-clockworking", "burner-automation-2"},
     unit =
     {
       count = 100,

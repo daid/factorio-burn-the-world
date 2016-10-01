@@ -20,7 +20,7 @@ data:extend(
       {"iron-gear-wheel", 15},
       {"copper-gear-wheel", 5},
       {"clockwork-parts", 10},
-      {"advanced-circuit", 1},--TODO
+      {"light-machinery", 1},
       {"burner-fast-inserter", 1}
     },
     result = "burner-stack-inserter",
