@@ -105,6 +105,23 @@ data:extend(
   },
   {
     type = "technology",
+    name = "burner-automation-3",
+    icon = "__base__/graphics/technology/automation.png",
+    effects =
+    {
+      { type = "unlock-recipe", recipe = "burner-assembling-machine-3" }
+    },
+    prerequisites = {"advanced-clockworking", "automation-2"},
+    unit =
+    {
+      count = 100,
+      ingredients = {{"science-pack-1", 1}, {"science-pack-2", 1}, {"science-pack-3", 1}},
+      time = 60
+    },
+    order = "a-b-c"
+  },
+  {
+    type = "technology",
     name = "burner-stack-inserter",
     icon = "__base__/graphics/technology/stack-inserter.png",
     effects =

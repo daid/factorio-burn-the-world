@@ -17,7 +17,8 @@ data:extend(
     enabled = false,
     ingredients =
     {
-      {"speed-module", 4},
+      {"light-machinery", 4},
+      {"spring-loaded-accumulator", 2},
       {"burner-assembling-machine-2", 2}
     },
     result = "burner-assembling-machine-3"
